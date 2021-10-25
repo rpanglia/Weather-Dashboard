@@ -1,0 +1,42 @@
+.container {
+    text-align: center;
+    padding: 10px;
+}
+
+#search-heading {
+    padding-top: 10px;
+}
+
+.container-fluid {
+    margin-top: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.search-section {
+    background-color: lightblue;
+    margin-top: 10px;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 576px) {
+    .navbar-brand {
+        padding: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        padding: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+}
