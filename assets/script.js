@@ -42,7 +42,6 @@ var getCityForecast = function(city){
     });
 };
 
-
 var showWeather = function(weather, userSearchCity){
  
     cityWeatherResult.textContent= "";  
@@ -78,7 +77,7 @@ var showWeather = function(weather, userSearchCity){
     var lat = weather.coord.lat;
     var lon = weather.coord.lon;
     getUVIndex(lat,lon)
- };
+};
  
 
 var getUVIndex = function(lat,lon){
@@ -97,7 +96,38 @@ var getUVIndex = function(lat,lon){
     console.log(lon);
 };
 
+var showUVIndex = function(index){
+    var UVIndexResult = document.createElement("div");
+    UVIndexResult.textContent = "UV Index: "
+    UVIndexResult.classList = "list-group-item"
+ 
+    UVIndexValue = document.createElement("span")
+    UVIndexValue.textContent = index.value
+ 
+    if(index.value <=2){
+        UVIndexValue.classList = "favorable"
+    } else if(index.value >2 && index.value<=8){
+        UVIndexValue.classList = "moderate "
+    }
+    else if(index.value >8){
+        UVIndexValue.classList = "severe"
+    };
+ 
+    UVIndexResult.appendChild(UVIndexValue);
+    cityWeatherResult.appendChild(UVIndexResult);
+};
 
+var getFiveDayForecast = function(city){
+    var apiKey = "6f64d1940d5a6583e7b42b902d0078a6"
+    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
+ 
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+           showFiveDay(data);
+        });
+    });
+};
 
 var oldSearch = function(oldSearch){
  
