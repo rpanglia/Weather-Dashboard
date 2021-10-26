@@ -21,7 +21,37 @@
 
 .search-section {
     background-color: lightblue;
-    margin-top: 10px;
+    /* margin-top: 5px; */
+}
+
+.search-section{
+    background-color:	#D3D3D3;
+}
+
+.list-group-item{
+    line-height: 0.5;
+    border: none;
+}
+
+.card-body{
+    flex:auto
+}
+
+span.favorable{
+    padding: 3px;
+    background-color: green;
+    color:white;
+}
+
+span.moderate{
+    padding: 3px;
+    background-color: yellow;
+}
+
+span.severe{
+    padding: 3px;
+    background-color: red;
+    color:white;
 }
 
 /*MEDIA QUERIES*/
@@ -39,4 +69,4 @@
         width: 100%;
         text-align: center;
     }
-}
+} 

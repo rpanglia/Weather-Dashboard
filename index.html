@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/style.css">
     <title>Weather Dashboard</title>
-    <link rel="shortcut icon" type="image/png" href="assets/images/icon.png" alt="favicon">
+    <link rel="shortcut icon" type="image/png" href="assets/images/Klara-1-modified.png" alt="favicon">
 </head>
 
 
 <body>
     
     <!--Navbar Section-->
-    <nav class="navbar navbar-dark bg-dark fixed-top" id="nav" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-dark bg-dark" id="nav" style="background-color: #e3f2fd;">
         <div class="container justify-content-center">
-            <a class="navbar-brand mb-0 h1" href="index.html">Weather<span><img src="assets/images/icon.png" width="30"
-                height="30" class="d-inline-block align-top" style="margin-inline:5px" alt="icon"></span>Dashboard
+            <a class="navbar-brand mb-0 h1" href="index.html">WEATHER<span><img src="assets/images/Klara-1-modified.png" width="30"
+                height="30" class="d-inline-block align-top" style="margin-inline:5px" alt="icon"></span>DASHBOARD
             </a>
         </div>
     </nav>
@@ -30,33 +30,29 @@
     <main class="container-fluid">
 
         <div class="row">
-                <!-- "search for city" box section CONDENSE IT -->
-                <div class="row" id= "search-heading">
-                    <h4> Search for a City</h4>
-                </div>
-                <div class= "col-12 col-md-3 p-2 search-section">
-                    <form class= "border p-2" id= "search-city-form"> 
-                        <h4>Search for a City...</h4>
-                        <input id="city" type="text" autofocus= "true" class="form-input" placeholder="Enter city here..." aria-label="Enter city here..."/>
-                        <button class= "btn btn-info" type= "submit"><i class="fas fa-search"></i></button>
-                    </form>
 
-                    <div class= "old-search border" id ="old-search-buttons"></div>
-                </div>
+            <div class="col-12 col-md-3 p-2 search-section">
+                <form class= "border p-2" id= "search-form">
+                    <h4>Search for a City</h2>
+                    <input id="city" type= "text" autofocus= "true" class= "form-input"/>
+                    <button class= "btn btn-primary" type= "submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class= "old-search border" id= "old-search-entries"></div>
+            </div>
 
-                <div class="col-12 col-md-9">
-                    <div class="row border current-city" id="current-weather">
-                        <div class="col-12">
-                            <h2 id="search-city"></h2>
-                            <div id="current-weather-box" class="list-group"></div>
-                        </div>
-                    </div>
-
-                    <div class="row border" id="forecast-five">
-                        <h3 class="col-12" id="forecast"></h3>
-                        <div class="d-flex" id="forecast-five-box"></div>
-                    </div>
+            <div class="col-12 col-md-9">
+                <div class= "row border selected-city" id= "current-forecast">
+                    <div class= "col-12">
+                        <h2 id="user-selected-city"></h2>
+                        <div id= "current-city-weather" class= "list-group"></div>
+                    </div>  
                 </div>
+                <div class= "row border" id= "five-day-forecast">
+                        <h2 class= "col-12" id= "forecast"></h2>
+                        <div class = "d-flex" id= "fiveday-container"></div>
+                </div>  
+            </div>
+
         </div>
     </main>
     
