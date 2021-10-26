@@ -28,6 +28,10 @@
     flex:auto
 }
 
+/* #cards {
+    margin-top: 10px;
+} */
+
 span.favorable{
     padding: 3px;
     background-color: green;
