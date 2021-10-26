@@ -9,3 +9,31 @@ var fiveDayContainer = document.querySelector("#five-day-forecast-container");
 var oldSearchEntry = document.querySelector("#old-search-entries");
 
 var cities = [];
+
+var formSubmissionEventHandler = function(event){
+    event.preventDefault();
+    var city = inputCity.value.trim();
+ 
+    if(city){
+        getCityForecast(city);
+        getFiveDayForecast(city);
+        cities.unshift({city});
+        inputCity.value = "";
+    } else {
+        alert("Please enter a city in the search box to look up current weather conditions.");
+    }
+    saveUserSearch();
+    oldSearch(city);
+};
+
+ 
+var oldSearchEventHandler = function(event){
+    var city = event.target.getAttribute("data-city")
+    if(city){
+        getCityForecast(city);
+        getFiveDayForecast(city);
+    }
+};
+
+searchForm.addEventListener("submit", formSubmissionEventHandler);
+oldSearchEntry.addEventListener("click", oldSearchEventHandler);
