@@ -43,6 +43,44 @@ var getCityForecast = function(city){
 };
 
 
+var showWeather = function(weather, userSearchCity){
+ 
+    cityWeatherResult.textContent= "";  
+    userSelectCity.textContent= userSearchCity;
+  
+    console.log(weather);
+  
+    //create sections for startdate, icon, temp, humidity, windspeed for user selected city card
+    var startDate = document.createElement("span")
+    startDate.textContent=" - " + moment(weather.dt.value).format("MMM D, YYYY") + " ";
+    userSelectCity.appendChild(startDate);
+  
+    var temperatureResult = document.createElement("span");
+    temperatureResult.textContent = "Current Temperature: " + weather.main.temp + " °F";
+    temperatureResult.classList = "list-group-item"
+    cityWeatherResult.appendChild(temperatureResult);
+  
+    var humidityResult = document.createElement("span");
+    humidityResult.textContent = "Humidity: " + weather.main.humidity + " %";
+    humidityResult.classList = "list-group-item"
+    cityWeatherResult.appendChild(humidityResult);
+    
+    var windResult = document.createElement("span");
+    windResult.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+    windResult.classList = "list-group-item"
+    cityWeatherResult.appendChild(windResult);
+  
+    var weatherIcon = document.createElement("img")
+    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+    userSelectCity.appendChild(weatherIcon);
+  
+    //coordinate variables
+    var lat = weather.coord.lat;
+    var lon = weather.coord.lon;
+    getUVIndex(lat,lon)
+ };
+ 
+
 var getUVIndex = function(lat,lon){
     var apiKey = "6f64d1940d5a6583e7b42b902d0078a6"
     var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
