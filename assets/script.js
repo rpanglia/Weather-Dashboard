@@ -129,6 +129,47 @@ var getFiveDayForecast = function(city){
     });
 };
 
+var showFiveDay = function(weather){
+    fiveDayContainer.textContent = "";
+    forecastTitle.textContent = "5-Day Forecast:";
+ 
+    var forecast = weather.list;
+        for(var i=5; i < forecast.length; i=i+8){
+        var dailyWeatherForecast = forecast[i];
+       
+        var forecastResult = document.createElement("div");
+        forecastResult.classList = "card text-light bg-primary m-2";
+ 
+        console.log(dailyWeatherForecast)
+        fiveDayContainer.appendChild(forecastResult);
+ 
+        //for 5 day forecast: again create sections for date, icon, temp, humdity
+        var fiveDayDates = document.createElement("h5")
+        fiveDayDates.textContent = moment.unix(dailyWeatherForecast.dt).format("MMM D, YYYY");
+        fiveDayDates.classList = "text-center card-header"
+        forecastResult.appendChild(fiveDayDates);
+       
+        var weatherIcon = document.createElement("img")
+        weatherIcon.classList = "card-body text-center";
+        weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyWeatherForecast.weather[0].icon}@2x.png`);  
+        forecastResult.appendChild(weatherIcon);
+        
+        var fiveDayTemp = document.createElement("span");
+        fiveDayTemp.classList = "card-body text-center";
+        fiveDayTemp.textContent = dailyWeatherForecast.main.temp + " °F";
+        forecastResult.appendChild(fiveDayTemp);
+    
+        var fiveDayHumid = document.createElement("span");
+        fiveDayHumid.classList = "card-body text-center";
+        fiveDayHumid.textContent = dailyWeatherForecast.main.humidity + "  %";
+        forecastResult.appendChild(fiveDayHumid);
+    
+        console.log(forecastResult);
+    };
+ 
+};
+
+
 var oldSearch = function(oldSearch){
  
     console.log(oldSearch)
@@ -142,13 +183,17 @@ var oldSearch = function(oldSearch){
     oldSearchEntry.prepend(oldSearchText);
 };
 
+
 var oldSearchEventHandler = function(event){
     var city = event.target.getAttribute("data-city")
+
     if(city){
         getCityForecast(city);
         getFiveDayForecast(city);
     }
 };
+
+// oldSearch();
 
 searchForm.addEventListener("submit", formSubmissionEventHandler);
 oldSearchEntry.addEventListener("click", oldSearchEventHandler);
