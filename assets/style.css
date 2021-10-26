@@ -11,17 +11,8 @@
     margin-top: 10px;
 }
 
-.hide {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
 .search-section {
     background-color: lightblue;
-    /* margin-top: 5px; */
 }
 
 .search-section{

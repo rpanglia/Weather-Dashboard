@@ -163,6 +163,11 @@ var showFiveDay = function(weather){
         fiveDayHumid.classList = "card-body text-center";
         fiveDayHumid.textContent = dailyWeatherForecast.main.humidity + "  %";
         forecastResult.appendChild(fiveDayHumid);
+
+        var fiveDayWind = document.createElement("span");
+        fiveDayWind.classList = "card-body text-center";
+        fiveDayWind.textContent = dailyWeatherForecast.wind.speed + " MPH";
+        forecastResult.appendChild(fiveDayWind);
     
         console.log(forecastResult);
     };
