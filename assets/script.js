@@ -26,7 +26,25 @@ var formSubmissionEventHandler = function(event){
     oldSearch(city);
 };
 
+var saveUserSearch = function(){
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+
+
+var oldSearch = function(oldSearch){
  
+    console.log(oldSearch)
+ 
+    oldSearchText = document.createElement("button");
+    oldSearchText.textContent = oldSearch;
+    oldSearchText.classList = "border btn-primary p-2 d-flex w-100";
+    oldSearchText.setAttribute("data-city", oldSearch)
+    oldSearchText.setAttribute("type", "submit");
+ 
+    oldSearchEntry.prepend(oldSearchText);
+};
+
 var oldSearchEventHandler = function(event){
     var city = event.target.getAttribute("data-city")
     if(city){
