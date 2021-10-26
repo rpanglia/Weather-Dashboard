@@ -24,12 +24,17 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
 # Previews
+Please see below images of the completed Weather Dashboard application. 
+![starter-image](https://user-images.githubusercontent.com/88461011/138934058-ea9acb07-95f2-425c-9adf-1ffb55704528.jpg)
+The first image displays what the user sees when arriving on this page. User is able to input a city name in the search box on the left side of the page.
 
-![weather-dashboard1] (C:\Users\d34p\desktop\projects\weather-dashboard\assets\images\starter-image.jpg)
-![weather-dashboard2] (C:\Users\d34p\desktop\projects\weather-dashboard\assets\images\first-search-entry.jpg)
-![weather-dashboard3] (C:\Users\d34p\desktop\projects\weather-dashboard\assets\images\multiple-searches.jpg)
+![first-search-entry](https://user-images.githubusercontent.com/88461011/138934082-9ecc484a-f80b-4b81-9f9d-74eabdca419a.jpg)
+This second image displays weather content for New York (user input). This showcases the city name, current date, current weather conidition for current date as well as a five-day forecast for the same city!
+
+![multiple-searches](https://user-images.githubusercontent.com/88461011/138934090-babfb23d-c872-4e28-8035-70b4b6fb0118.jpg)
+Users can search for multiple cities (one at a time) and their previous search entries are stored on the left (via localStorage) and users can click on any of the previous entries to reload the weather data.
 
 # Links
-
+Link to Weather Dashboard Deployed application: https://rpanglia.github.io/Weather-Dashboard/
 
 # That's all for now folks!
