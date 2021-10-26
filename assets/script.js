@@ -43,6 +43,24 @@ var getCityForecast = function(city){
 };
 
 
+var getUVIndex = function(lat,lon){
+    var apiKey = "6f64d1940d5a6583e7b42b902d0078a6"
+    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
+   
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+            showUVIndex(data)
+            console.log(data)
+        });
+    });
+ 
+    console.log(lat);
+    console.log(lon);
+};
+
+
+
 var oldSearch = function(oldSearch){
  
     console.log(oldSearch)
